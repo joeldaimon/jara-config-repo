@@ -1,0 +1,11 @@
+jwt:
+  secret: estaesunallavesecretamuyseguraparajwt1234567890
+
+spring:
+  jpa:
+    open-in-view: false
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
