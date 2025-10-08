@@ -26,6 +26,9 @@ spring:
           enabled: true
           lower-case-service-id: true
 
+jwt:
+  secret: estaesunallavesecretamuyseguraparajwt1234567890
+  
 eureka:
   client:
     service-url:
