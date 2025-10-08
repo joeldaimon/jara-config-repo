@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: usuarios
+          uri: lb://usuarios-service
+          predicates:
+            - Path=/usuarios/**
+        - id: productos
+          uri: lb://productos-service
+          predicates:
+            - Path=/productos/**
+        - id: pedidos
+          uri: lb://pedidos-service
+          predicates:
+            - Path=/pedidos/**
+        - id: auth
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, refresh
