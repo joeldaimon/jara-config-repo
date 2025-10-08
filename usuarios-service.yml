@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/usuariosdb
+    username: usuarios_user
+    password: usuarios_pass
+
+jwt:
+  secret: "estaesunallavesecretamuyseguraparajwt1234567890"
