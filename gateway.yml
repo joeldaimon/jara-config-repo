@@ -32,7 +32,7 @@ jwt:
 eureka:
   client:
     service-url:
-      defaultZone: http://server:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
 
 management:
   endpoints:
