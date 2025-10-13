@@ -1,8 +1,38 @@
+server:
+  port: 8081
+  
 spring:
   datasource:
     url: jdbc:postgresql://postgres-usuarios:5432/usuariosdb
     username: usuarios_user
     password: usuarios_pass
+    
+  cloud:
+    config:
+      uri: http://config-server:8888
+      fail-fast: true
+      
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, info
 
 jwt:
   secret: "estaesunallavesecretamuyseguraparajwt1234567890"
